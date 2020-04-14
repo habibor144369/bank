@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>www.bank deposit.com</title>
+    <link rel="stylesheet" href="css/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Muli:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body>
+ <div id="login-area">
+       <h1 class="text-center">Welcome to pioneer bank</h1>
+   <div class="submit-area">
+           <h3>Login Here</h3><br>
+           <input class="form-control" type="text" placeholder="email"><br>
+           <input class="form-control" type="password" placeholder="password"><br>
+
+ 
+  <div class="row">
+    <div class="col-md-6">
+        <button id="login" class="btn btn-success">Click Here</button><br>
+        <label><br>
+        <input type="checkbox" name="remember"> Remember me
+    </label>
+    </div>
+
+
+        <div class=" col-md-6">
+            <label><span><h6>Male</h6></span></label>
+            <input type="radio" name="gender"><br>
+            <label><span><h6>Female</h6></span></label>
+            <input type="radio" name="gender"><br>
+            
+        </div>
+</div>  
+
+          
+        <div class="tata row">
+            <div class="col-md-6">
+                <button id="cancelBtn" type="button" class="btn btn-danger">Cancel Here</button>
+            </div>
+            
+            <div class="col-md-6">
+                <span class="game">Forgot <a href="#">password?</a></span>
+            </div> 
+         </div>
+     </div>
+</div>
+
+
+
+    <div id="transaction-area">
+        <h1 class="text-center">Transaction Area</h1>
+        <div class="month row">
+            <div class="col-md-4">
+               <div class="deposit common">
+                <h5>Deposit</h5>
+                <h2>$<span id="currentDeposit">00</span> </h2>
+               </div>
+            </div>
+            <div class="col-md-4">
+               <div class="withdraw common">
+                <h5>Withdraw</h5>
+                <h2>$ <span id="currentWithdraw">00</span></h2>
+               </div>
+            </div>
+            <div class="col-md-4">
+              <div class="balance common">
+                <h5>Balance</h5>
+                <h2>$ <span id="currentBalance">2550</span></h2>
+              </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-6"><br>
+                <div class="submit-area">
+                    <h4>Deposit</h4><br>
+                    <input id="depositAmount" type="text" class="form-control" placeholder="$ amount you want to deposit"><br><br>
+                    <button id="addDeposit" class="btn btn-success"> Deposit </button>
+                </div>   
+            </div>
+
+            <div class="col-md-6"><br>
+                <div class="submit-area">
+                    <h4>Withdraw</h4><br>
+                    <input id="withdrawAmount" type="text" class="form-control" placeholder="$ amount you want to withdraw"><br><br>
+                    <button id="addWithdraw" class="btn btn-success">Withdraw</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+       
+
+    <script>
+        // login button event handler.......
+        const loginBtn = document.getElementById("login");
+        loginBtn.addEventListener("click",function(){
+            const loginArea = document.getElementById("login-area");
+            loginArea.style.display = "none";
+            const transactionArea = document.getElementById("transaction-area");
+            transactionArea.style.display = "block";
+        })
+        // deposit button event handler...
+        const depositBtn = document.getElementById("addDeposit");
+          depositBtn.addEventListener("click", function(){
+           const depositNumber = getInputNumber("depositAmount");
+
+            /*current deposit......
+
+             const currentDeposit = document.getElementById("currentDeposit").innerHTML;
+            const currentDepositNumber = parseFloat(currentDeposit);
+            const totalDeposit = depositNumber + currentDepositNumber;
+            document.getElementById("currentDeposit").innerHTML = totalDeposit;
+            
+            //current balance....
+
+            const currentBalance = document.getElementById("currentBalance").innerHTML;
+            const currentBalanceNumber = parseFloat(currentBalance);
+            const totalBalance = depositNumber + currentBalanceNumber;
+            document.getElementById("currentBalance").innerHTML = totalBalance;
+            
+            document.getElementById("depositAmount").value = null;
+             document.getElementById("depositAmount").value = ""; //same system...
+            
+            */
+            
+                updateSpanText("currentDeposit", depositNumber);
+                updateSpanText("currentBalance",depositNumber);
+               document.getElementById("depositAmount").value = null;
+          })
+
+
+          //addWithdraw button handler...
+            const withdrawBtn = document.getElementById("addWithdraw");
+            withdrawBtn.addEventListener("click", function(){
+               const withdrawNumber = getInputNumber("withdrawAmount");
+               
+               updateSpanText("currentWithdraw", withdrawNumber);
+               updateSpanText("currentBalance",-1 * withdrawNumber);
+               document.getElementById("withdrawAmount").value = null;
+            })
+
+            function getInputNumber(id){
+                const amount = document.getElementById(id).value;
+                const amountNumber = parseFloat(amount);
+                return amountNumber;
+            }
+
+          function updateSpanText(id,depositNumber){
+            const currentDeposit = document.getElementById(id).innerHTML;
+            const currentDepositNumber = parseFloat(currentDeposit);
+            const totalDeposit = depositNumber + currentDepositNumber;
+            document.getElementById(id).innerHTML = totalDeposit;
+          }
+          const cancelBtn = document.getElementById("cancelBtn");
+          cancelBtn.addEventListener("click", function(){
+            alert(  "A warning sign is a type of sign which indicates a potential hazard, obstacle or condition requiring special attention.");
+          })
+
+
+    </script>
+    
+</body>
+</html>

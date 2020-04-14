@@ -1,0 +1,78 @@
+body{
+    font-family: 'Muli', sans-serif;
+    padding: 40px 120px;
+}
+.submit-area{
+    font-weight: 700;
+    border-radius: 10px;
+    margin-top: 50px;
+    padding: 40px;
+    box-shadow: 4px 4px 25px rgb(201, 204, 204);
+}
+ .game{
+    margin-left: 295px;
+    font-size: 15px;
+}
+.row{
+    margin-top: 10px;
+}
+.tata{
+    border-radius: 8px;
+    background-color: rgb(245, 243, 243);
+    padding: 40px 0px;
+    margin-top: 50px;
+}
+
+span h6{
+    font-size: 15px;
+    margin-left: 320px;
+    margin-top: 3px;
+}
+#transaction-area{
+    box-shadow: 5px 5px 20px rgb(223, 222, 219);
+    padding: 70px 40px;
+    border-radius: 10px;
+    display: none;
+}
+.month{
+    margin-top: 70px;
+}
+.common{
+    
+    font-size: 100px;
+    color: whitesmoke;
+    padding: 20px 20px;
+    border-radius: 10px;
+}
+.common h5{
+    font-size: 26px;
+    font-weight: 900;
+}
+.common h2{
+    font-size: 30px;
+    font-weight: 900;
+}
+.deposit{
+    background-color: rgb(255, 136, 160);
+}
+.withdraw{
+    background-color: rgb(116, 155, 158);
+}
+.balance{
+    background-color: rgb(250, 155, 123);
+}
+#login-area h1{
+    font-weight: 700;
+    color: slateblue;
+}
+.submit-area h3{
+    font-weight: 700;
+    color: rgb(253, 49, 117);
+}
+#transaction-area h1{
+    font-weight: 700;
+    color: rgb(17, 173, 147);
+}.submit-area h4{
+    font-weight: 700;
+    color: teal;
+}
