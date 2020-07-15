@@ -110,6 +110,15 @@
         const depositBtn = document.getElementById("addDeposit");
           depositBtn.addEventListener("click", function(){
            const depositNumber = getInputNumber("depositAmount");
+              if(depositNumber < 0){
+                  alert("Depost Number Cannot Be Negative!")
+              }
+              else{
+                  
+                updateSpanText("currentDeposit", depositNumber);
+                updateSpanText("currentBalance",depositNumber);
+                document.getElementById("depositAmount").value = null;
+              }
 
             /*current deposit......
 
@@ -130,9 +139,6 @@
             
             */
             
-                updateSpanText("currentDeposit", depositNumber);
-                updateSpanText("currentBalance",depositNumber);
-               document.getElementById("depositAmount").value = null;
           })
 
 
